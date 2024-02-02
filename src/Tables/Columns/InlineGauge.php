@@ -1,20 +1,20 @@
 <?php
 
-namespace Kainiklas\FilamentInlineGauge\Tables\Columns;
+namespace Kainiklas\FilamentGauge\Tables\Columns;
 
 use Closure;
 use Filament\Tables\Columns\Column;
-use Kainiklas\FilamentInlineGauge\Enums\InlineGaugeSize;
+use Kainiklas\FilamentGauge\Enums\GaugeSize;
 
 class InlineGauge extends Column
 {
-    protected string $view = 'kainiklas-filament-inline-gauge::tables.columns.inline-gauge';
+    protected string $view = 'kainiklas-filament-gauge::tables.columns.inline-gauge';
 
     protected string | Closure | null $sectionColor = null;
 
     protected string | Closure | null $shapeColor = null;
 
-    protected InlineGaugeSize | Closure | null $size = null;
+    protected GaugeSize | Closure | null $size = null;
 
     protected bool | Closure | null $isValueHidden = null;
 
@@ -34,7 +34,7 @@ class InlineGauge extends Column
         return $this;
     }
 
-    public function size(InlineGaugeSize | Closure | null $size): static
+    public function size(GaugeSize | Closure | null $size): static
     {
         $this->size = $size;
 
@@ -60,7 +60,7 @@ class InlineGauge extends Column
 
     public function getSize(): string
     {
-        return $this->evaluate($this->size)?->value ?? InlineGaugeSize::SM->value;
+        return $this->evaluate($this->size)?->value ?? GaugeSize::SM->value;
     }
 
     public function isValueHidden(): bool

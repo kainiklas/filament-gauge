@@ -1,10 +1,10 @@
 {
-    "name": "kainiklas/filament-inline-gauge",
-    "description": "Inline Table Gauge Chart for FilamentPHP",
+    "name": "kainiklas/filament-gauge",
+    "description": "Gauge Chart for FilamentPHP",
     "keywords": [
         "kainiklas",
         "laravel",
-        "filament-inline-gauge",
+        "filament-gauge",
         "filament",
         "filamentphp",
         "table",
@@ -13,10 +13,10 @@
         "gauge",
         "chart"
     ],
-    "homepage": "https://github.com/kainiklas/filament-inline-gauge",
+    "homepage": "https://github.com/kainiklas/filament-gauge",
     "support": {
-        "issues": "https://github.com/kainiklas/filament-inline-gauge/issues",
-        "source": "https://github.com/kainiklas/filament-inline-gauge"
+        "issues": "https://github.com/kainiklas/filament-gauge/issues",
+        "source": "https://github.com/kainiklas/filament-gauge"
     },
     "license": "MIT",
     "authors": [
@@ -46,13 +46,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Kainiklas\\FilamentInlineGauge\\": "src/",
-            "Kainiklas\\FilamentInlineGauge\\Database\\Factories\\": "database/factories/"
+            "Kainiklas\\FilamentGauge\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Kainiklas\\FilamentInlineGauge\\Tests\\": "tests/"
+            "Kainiklas\\FilamentGauge\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -72,11 +71,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Kainiklas\\FilamentInlineGauge\\FilamentInlineGaugeServiceProvider"
-            ],
-            "aliases": {
-                "FilamentInlineGauge": "Kainiklas\\FilamentInlineGauge\\Facades\\FilamentInlineGauge"
-            }
+                "Kainiklas\\FilamentGauge\\FilamentGaugeServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",

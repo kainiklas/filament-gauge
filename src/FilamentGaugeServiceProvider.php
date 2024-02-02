@@ -1,6 +1,6 @@
 <?php
 
-namespace Kainiklas\FilamentInlineGauge;
+namespace Kainiklas\FilamentGauge;
 
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
@@ -9,11 +9,11 @@ use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentInlineGaugeServiceProvider extends PackageServiceProvider
+class FilamentGaugeServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'kainiklas-filament-inline-gauge';
+    public static string $name = 'kainiklas-filament-gauge';
 
-    public static string $viewNamespace = 'kainiklas-filament-inline-gauge';
+    public static string $viewNamespace = 'kainiklas-filament-gauge';
 
     public function configurePackage(Package $package): void
     {
@@ -26,7 +26,7 @@ class FilamentInlineGaugeServiceProvider extends PackageServiceProvider
             ->hasViews(static::$viewNamespace)
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
-                    ->askToStarRepoOnGitHub('kainiklas/filament-inline-gauge');
+                    ->askToStarRepoOnGitHub('kainiklas/filament-gauge');
             });
     }
 
@@ -45,7 +45,7 @@ class FilamentInlineGaugeServiceProvider extends PackageServiceProvider
 
     protected function getAssetPackageName(): ?string
     {
-        return 'kainiklas/filament-inline-gauge';
+        return 'kainiklas/filament-gauge';
     }
 
     /**
@@ -54,7 +54,7 @@ class FilamentInlineGaugeServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            Css::make('filament-inline-gauge-styles', __DIR__ . '/../resources/dist/filament-inline-gauge.css'),
+            Css::make('filament-gauge-styles', __DIR__ . '/../resources/dist/filament-gauge.css'),
         ];
     }
 }

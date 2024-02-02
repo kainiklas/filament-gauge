@@ -1,6 +1,6 @@
 <?php
 
-namespace KaiNiklas\FilamentInlineGauge\Tests;
+namespace KaiNiklas\FilamentGauge\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
