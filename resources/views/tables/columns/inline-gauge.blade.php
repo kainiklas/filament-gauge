@@ -1,5 +1,5 @@
 @php
-    $value = min(round($getState() / $getUpperBound() * 100), $getUpperBound());
+    $value = min(round(($getState() / $getUpperBound()) * 100), $getUpperBound());
     $isValueHidden = $isValueHidden();
     $size = $getSize(); // sm, md, xl
     $shapeColour = $getShapeColor();
@@ -29,7 +29,8 @@
         ],
     ];
 @endphp
-<div class="w-full">
+<div
+    {{ $attributes->merge($getExtraAttributes(), escape: false)->class(['fi-ta-text grid gap-y-1 px-3']) }}>
     <div class="relative flex flex-col items-center justify-center">
         <svg fill="none" shape-rendering="crispEdges" height="{{ $sizes[$size]['height'] }}"
             width="{{ $sizes[$size]['width'] }}" viewBox="0 0 120 120" stroke-width="1" class="transform -rotate-90">
