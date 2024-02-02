@@ -2,8 +2,8 @@
     $value = min(round(($getState() / $getUpperBound()) * 100), $getUpperBound());
     $isValueHidden = $isValueHidden();
     $size = $getSize(); // sm, md, xl
-    $shapeColour = $getShapeColor();
-    $sectionColour = $getSectionColor();
+    $shapeColor = $getShapeColor();
+    $sectionColor = $getSectionColor();
 
     $circumference = 332; // 2 * pi * radius (=53)
     $valueInCircumference = ($value / 100) * $circumference;
@@ -34,9 +34,9 @@
     <div class="relative flex flex-col items-center justify-center">
         <svg fill="none" shape-rendering="crispEdges" height="{{ $sizes[$size]['height'] }}"
             width="{{ $sizes[$size]['width'] }}" viewBox="0 0 120 120" stroke-width="1" class="transform -rotate-90">
-            <circle class="{{ $shapeColour }}" stroke-width="14" stroke="currentColor" fill="transparent"
+            <circle class="{{ $shapeColor }}" stroke-width="14" stroke="currentColor" fill="transparent"
                 shape-rendering="geometricPrecision" r="53" cx="60" cy="60" />
-            <circle class="{{ $sectionColour }}" stroke-width="14" stroke-dasharray="{{ $strokeDasharray }}"
+            <circle class="{{ $sectionColor }}" stroke-width="14" stroke-dasharray="{{ $strokeDasharray }}"
                 stroke-dashoffset="{{ $initialOffset }}" shape-rendering="geometricPrecision" stroke="currentColor"
                 fill="transparent" r="53" cx="60" cy="60"
                 style="stroke-dashoffset: {{ $strokeDashoffset }}" />
