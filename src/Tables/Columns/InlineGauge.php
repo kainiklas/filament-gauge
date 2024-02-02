@@ -14,19 +14,10 @@ class InlineGauge extends Column
 
     protected string | Closure | null $shapeColor = null;
 
-    /**
-     * @var string | Closure | null
-     */
     protected InlineGaugeSize | Closure | null $size = null;
 
-    /**
-     * @var string | Closure | null
-     */
     protected bool | Closure | null $isValueHidden = null;
 
-    /**
-     * @var int | float | Closure | null
-     */
     protected int | Closure | null $upperBound = null;
 
     public function shapeColor(string | Closure | null $color): static
@@ -43,9 +34,6 @@ class InlineGauge extends Column
         return $this;
     }
 
-    /**
-     * @param  string | Closure | null  $color
-     */
     public function size(InlineGaugeSize | Closure | null $size): static
     {
         $this->size = $size;
@@ -53,9 +41,6 @@ class InlineGauge extends Column
         return $this;
     }
 
-    /**
-     * @param  string | Closure | null  $isValueHidden
-     */
     public function valueHidden(bool | Closure | null $isValueHidden = true): static
     {
         $this->isValueHidden = $isValueHidden;
