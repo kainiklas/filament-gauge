@@ -39,19 +39,29 @@ InlineGauge::make('number')
     // hides the number in the middle of the circle
     ->valueHidden() 
 
-    // full circle color
-    // default: 'text-gray-300 dark:text-gray-700'
-    ->shapeColor('css-class') 
-
-    // colored section
-    // default: 'text-primary-600', 
-    ->sectionColor('css-class') 
-
     // set an upper bound to calculate correct percentages
     // this should be the highest possible value
     // default: 100, which means values between 0 and 100
     // example: values between 0 and 1 -> set it to 1
     ->upperBound(1) 
+```
+
+## Customize Style
+
+You can customize the style of the component with the following css hook classes:
+
+```css
+/* arc, representing the value */
+.fi-inline-gauge-section-color {
+    @apply text-primary-600
+}
+```
+
+```css
+/* full circle (the background) */
+.fi-inline-gauge-shape-color {
+    @apply text-gray-300 dark:text-gray-700
+}
 ```
 
 ## Changelog

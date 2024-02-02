@@ -10,29 +10,11 @@ class InlineGauge extends Column
 {
     protected string $view = 'kainiklas-filament-gauge::tables.columns.inline-gauge';
 
-    protected string | Closure | null $sectionColor = null;
-
-    protected string | Closure | null $shapeColor = null;
-
     protected GaugeSize | Closure | null $size = null;
 
     protected bool | Closure | null $isValueHidden = null;
 
     protected int | Closure | null $upperBound = null;
-
-    public function shapeColor(string | Closure | null $color): static
-    {
-        $this->shapeColor = $color;
-
-        return $this;
-    }
-
-    public function sectionColor(string | Closure | null $color): static
-    {
-        $this->sectionColor = $color;
-
-        return $this;
-    }
 
     public function size(GaugeSize | Closure | null $size): static
     {
@@ -46,16 +28,6 @@ class InlineGauge extends Column
         $this->isValueHidden = $isValueHidden;
 
         return $this;
-    }
-
-    public function getSectionColor(): string
-    {
-        return $this->evaluate($this->sectionColor) ?? 'text-primary-600';
-    }
-
-    public function getShapeColor(): string
-    {
-        return $this->evaluate($this->shapeColor) ?? 'text-gray-300 dark:text-gray-700';
     }
 
     public function getSize(): string
