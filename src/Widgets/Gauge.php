@@ -3,7 +3,6 @@
 namespace Kainiklas\FilamentGauge\Widgets;
 
 use Closure;
-use Filament\Support\Components\ViewComponent;
 use Filament\Support\Concerns\EvaluatesClosures;
 use Filament\Support\Enums\IconPosition;
 use Illuminate\Contracts\Support\Htmlable;
